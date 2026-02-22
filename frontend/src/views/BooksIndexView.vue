@@ -3,11 +3,24 @@ import { BookService } from '@/services/BookService.js';
 
 const books = BookService.getBooks();
 
+function confirmDeleteLast() {
+    const confirmed = window.confirm(
+        '¿Seguro que quieres eliminar el último libro añadido?'
+    );
+
+    if (confirmed) {
+        BookService.deleteLastBook();
+    }
+}
 
 </script>
 <template>
     <section>
         <div class="max-w-7xl mx-auto">
+            <button @click="confirmDeleteLast"
+                class="inline-block bg-red-600 text-white font-semibold px-5 py-2 rounded hover:bg-red-700 transition">
+                Eliminate Last Book
+            </button>
             <div class="flex justify-end mb-6">
                 <RouterLink to="/books/create"
                     class="inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded hover:bg-blue-700 transition">

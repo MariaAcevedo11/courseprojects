@@ -1,6 +1,4 @@
-import type { ReviewInterface } from '@/interfaces/ReviewInterface';
-
-export const reviewSeeder: ReviewInterface[] = [
+export const reviewSeeder = [
   {
     id: 1,
     bookId: 1,
